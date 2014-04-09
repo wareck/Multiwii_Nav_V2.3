@@ -36,7 +36,7 @@
     //#define BI
     //#define TRI
     //#define QUADP
-    //#define QUADX
+      #define QUADX
     //#define Y4
     //#define Y6
     //#define HEX6
@@ -363,14 +363,12 @@
       //#define SPEK_BIND_DATA   6
 
     /*******************************    SBUS RECIVER    ************************************/
-      /* The following line apply only for Futaba S-Bus Receiver on MEGA boards at RX1 only (Serial 1) or PROMICRO boards.
+      /* The following line apply only for Futaba S-Bus Receiver on MEGA boards or PROMICRO boards.
          You have to invert the S-Bus-Serial Signal e.g. with a Hex-Inverter like IC SN74 LS 04 */
 	//#define SBUS     PITCH,YAW,THROTTLE,ROLL,AUX1,AUX2,AUX3,AUX4,8,9,10,11,12,13,14,15,16,17  // dsm2 orangerx 
 	//#define SBUS     ROLL,PITCH,THROTTLE,YAW,AUX1,AUX2,AUX3,AUX4,8,9,10,11,12,13,14,15,16,17  // T14SG 
-	#define SBUS_MID_OFFSET 988 //SBUS Mid-Point at 1500 
-	#define RX_SERIAL_PORT 1 
-
-	  
+        //#define RX_SERIAL_PORT 1
+	//#define SBUS_MID_OFFSET 988 //SBUS Mid-Point at 1500 
 
 /*************************************************************************************************/
 /*****************                                                                 ***************/
