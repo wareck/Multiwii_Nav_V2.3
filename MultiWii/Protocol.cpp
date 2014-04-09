@@ -180,7 +180,7 @@ void serialCom() {
     #endif
     #define RX_COND
 #if (defined(SPEKTRUM)|| defined(SBUS)) && (UART_NUMBER >1)
-      #define SPEK_COND && (SPEK_SERIAL_PORT != CURRENTPORT)
+      #define RX_COND && (RX_SERIAL_PORT != CURRENTPORT)
     #endif
     uint8_t cc = SerialAvailable(CURRENTPORT);
     while (cc-- GPS_COND RX_COND) {

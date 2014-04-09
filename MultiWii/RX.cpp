@@ -91,18 +91,14 @@ void configureReceiver() {
     
   /*************************   Special RX Setup   ********************************/
   #endif
-  // Init PPM SUM RX
   #if defined(SERIAL_SUM_PPM)
     PPM_PIN_INTERRUPT; 
   #endif
-  // Init Sektrum Satellite RX
   #if defined (SPEKTRUM)
     SerialOpen(RX_SERIAL_PORT,115200);
   #endif
-  // Init SBUS RX
   #if defined(SBUS)
 SerialOpen(RX_SERIAL_PORT,100000);
-
 switch (RX_SERIAL_PORT) { //parity 
 #if defined(MEGA) 
 case 0: UCSR0C |= (1 << UPM01) | (1 << USBS0); break;
@@ -308,12 +304,12 @@ case 3: UCSR3C |= (1 << UPM31) | (1 << USBS3); break;
 /***************                   SBUS RX Data                    ********************/
 /**************************************************************************************/
 #if defined(SBUS)
+
 #define SBUS_SYNCBYTE 0x0F // Not 100% sure: at the beginning of coding it was 0xF0 !!! 
 static uint16_t sbusIndex=0; 
 static uint16_t sbus[25] = { 0 };
-void  readSBus(){
 
-  static uint16_t sbus[25]={0};
+void  readSBus(){
   while(SerialAvailable(RX_SERIAL_PORT)){
     int val = SerialRead(RX_SERIAL_PORT);
     if(sbusIndex==0 && val != SBUS_SYNCBYTE)
@@ -322,7 +318,6 @@ void  readSBus(){
     if(sbusIndex==25){
       sbusIndex=0;
       spekFrameFlags = 0x00;
-
       rcValue[0]  = ((sbus[1]|sbus[2]<< 8) & 0x07FF)/2+SBUS_MID_OFFSET;
       rcValue[1]  = ((sbus[2]>>3|sbus[3]<<5) & 0x07FF)/2+SBUS_MID_OFFSET; 
       rcValue[2]  = ((sbus[3]>>6|sbus[4]<<2|sbus[5]<<10) & 0x07FF)/2+SBUS_MID_OFFSET; 
@@ -415,30 +410,33 @@ uint16_t readRawRC(uint8_t chan) {
 /**************************************************************************************/
 /***************          compute and Filter the RX data           ********************/
 /**************************************************************************************/
+#define AVERAGING_ARRAY_LENGTH 4
 void computeRC() {
-  static uint16_t rcData4Values[RC_CHANS][4], rcDataMean[RC_CHANS];
+  static uint16_t rcData4Values[RC_CHANS][AVERAGING_ARRAY_LENGTH-1];
+  uint16_t rcDataMean,rcDataTmp;
   static uint8_t rc4ValuesIndex = 0;
   uint8_t chan,a;
-  #if !defined(OPENLRSv2MULTI) // dont know if this is right here
+  uint8_t failsafeGoodCondition = 1;
+
+  #if !defined(OPENLRSv2MULTI)
     rc4ValuesIndex++;
-    if (rc4ValuesIndex == 4) rc4ValuesIndex = 0;
+    if (rc4ValuesIndex == AVERAGING_ARRAY_LENGTH-1) rc4ValuesIndex = 0;
     for (chan = 0; chan < RC_CHANS; chan++) {
+      rcDataTmp = readRawRC(chan);
       #if defined(FAILSAFE)
-        uint16_t rcval = readRawRC(chan);
-        if(rcval>FAILSAFE_DETECT_TRESHOLD || chan > 3 || !f.ARMED) {        // update controls channel only if pulse is above FAILSAFE_DETECT_TRESHOLD
-          rcData4Values[chan][rc4ValuesIndex] = rcval;                      // In disarmed state allow always update for easer configuration.
-        }
-      #else
-        rcData4Values[chan][rc4ValuesIndex] = readRawRC(chan);
-      #endif
+        failsafeGoodCondition = rcDataTmp>FAILSAFE_DETECT_TRESHOLD || chan > 3 || !f.ARMED; // update controls channel only if pulse is above FAILSAFE_DETECT_TRESHOLD
+      #endif                                                                                // In disarmed state allow always update for easer configuration.
       #if defined(SPEKTRUM) || defined(SBUS) // no averaging for Spektrum & SBUS signal
-        rcData[chan] = rcData4Values[chan][rc4ValuesIndex];
+        if(failsafeGoodCondition)  rcData[chan] = rcDataTmp;
       #else
-        rcDataMean[chan] = 0;
-        for (a=0;a<4;a++) rcDataMean[chan] += rcData4Values[chan][a];
-        rcDataMean[chan]= (rcDataMean[chan]+2)>>2;
-        if ( rcDataMean[chan] < (uint16_t)rcData[chan] -3)  rcData[chan] = rcDataMean[chan]+2;
-        if ( rcDataMean[chan] > (uint16_t)rcData[chan] +3)  rcData[chan] = rcDataMean[chan]-2;
+        if(failsafeGoodCondition) {
+          rcDataMean = rcDataTmp;
+          for (a=0;a<AVERAGING_ARRAY_LENGTH-1;a++) rcDataMean += rcData4Values[chan][a];
+          rcDataMean = (rcDataMean+(AVERAGING_ARRAY_LENGTH/2))/AVERAGING_ARRAY_LENGTH;
+          if ( rcDataMean < (uint16_t)rcData[chan] -3)  rcData[chan] = rcDataMean+2;
+          if ( rcDataMean > (uint16_t)rcData[chan] +3)  rcData[chan] = rcDataMean-2;
+          rcData4Values[chan][rc4ValuesIndex] = rcDataTmp;
+        }
       #endif
       if (chan<8 && rcSerialCount > 0) { // rcData comes from MSP and overrides RX Data until rcSerialCount reaches 0
         rcSerialCount --;

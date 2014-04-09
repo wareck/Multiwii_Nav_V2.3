@@ -303,7 +303,6 @@
   #endif 
   #define PPM_PIN_INTERRUPT          attachInterrupt(0, rxInt, RISING); //PIN 0
   #define RX_SERIAL_PORT             0
-  #define SPEK_SERIAL_PORT           0
   //RX PIN assignment inside the port //for PORTD
   #define THROTTLEPIN                2
   #define ROLLPIN                    4
@@ -1751,7 +1750,7 @@
 #elif defined(HEX6H)
   #define MULTITYPE 18
 #elif defined(SINGLECOPTER)
-  #define MULTITYPE 21
+  #define MULTITYPE 20
   #define SERVO_RATES      {30,30,100,0,1,0,1,100}
 #elif defined(DUALCOPTER)
   #define MULTITYPE 20

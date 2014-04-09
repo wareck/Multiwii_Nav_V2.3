@@ -519,8 +519,8 @@
       //#define GYRO_SMOOTHING {20, 20, 3}    // (*) separate averaging ranges for roll, pitch, yaw
 
     /************************    Moving Average Gyros    **********************************/
-      #define MMGYRO 10                      // (*) Active Moving Average Function for Gyros
-      #define MMGYROVECTORLENGTH 15          // Length of Moving Average Vector (maximum value for tunable MMGYRO
+      //#define MMGYRO 10                      // (*) Active Moving Average Function for Gyros
+      //#define MMGYROVECTORLENGTH 15          // Length of Moving Average Vector (maximum value for tunable MMGYRO
       /* Moving Average ServoGimbal Signal Output */
       //#define MMSERVOGIMBAL                  // Active Output Moving Average Function for Servos Gimbal
       //#define MMSERVOGIMBALVECTORLENGHT 32   // Lenght of Moving Average Vector
@@ -539,7 +539,10 @@
   /* Automatically increase throttle based on the angle of the copter
      Original idea by Kraut Rob, first implementation HAdrian							*/
 
-  #define THROTTLE_ANGLE_CORRECTION 40
+  //#define THROTTLE_ANGLE_CORRECTION 40
+  
+  /*** HEADFREE : the copter can be controled by an absolute stick orientation, whatever the yaw orientation ***/
+  //#define HEADFREE
   
  /*************************        Advanced Headfree Mode             ********************/
  /* In Advanced Headfree mode when the copter is farther than ADV_HEADFREE_RANGE meters then 
@@ -549,8 +552,8 @@
 	first implementation by HAdrian, mods by EOSBandi
  */
 
-   #define ADVANCED_HEADFREE									//Advanced headfree mode is enabled when this is uncommented
-   #define ADV_HEADFREE_RANGE 15								//Range where advanced headfree mode activated
+   //#define ADVANCED_HEADFREE									//Advanced headfree mode is enabled when this is uncommented
+   //#define ADV_HEADFREE_RANGE 15								//Range where advanced headfree mode activated
 
 
   /************************        continuous gyro calibration        ********************/
