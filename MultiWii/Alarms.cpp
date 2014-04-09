@@ -84,12 +84,20 @@ void alarmHandler(void){
     else if (!f.GPS_FIX)alarmArray[2] = 1;
     else alarmArray[2] = 0;
   #endif
+  
+#if (defined (LOG_PERMANENT_SD_ONLY))|(defined (LOG_GPS_POSITION)) && !(defined(MWI_SDCARD))
+#error "if you had enabled options in SDCARD support you must enable #define MWI_SDCARD, please verify your config.h"
+#endif
+#if (defined (MWI_SDCARD))&& !(defined(LOG_PERMANENT))
+#error "if you wants to use SDCARD support, you must enable #define LOG_PERMANENT, please verify your config.h"
+#endif
 
 #if defined(VOLUME_FLIGHT)||defined(VOLUME_S1)||defined(VOLUME_S2)||defined(VOLUME_S3)
 #if !defined(BUZZER)
 #error "If you want to use VOLUME_FLIGHT you must use a buzzer...Please check your config.h"
 #error "Si vous utilisez l'option VOLUME_FLIGHT vous devez activer un buzzer...Merci de verifier config.h'"
 #endif
+
 	if (f.VOLUME_MODE == 1 && alarmArray[1] == 0)
 		alarmArray[1] = 1;
 	else if (f.VOLUME_MODE == 0 && alarmArray[1] == 1)
