@@ -209,13 +209,6 @@ void LoadDefaults() {
   update_constants(); // this will also write to eeprom
 }
 
-#if (defined (LOG_PERMANENT_SD_ONLY))|(defined (LOG_GPS_POSITION)) && !(defined(MWI_SDCARD))
-#error "if you had enabled options in SDCARD support you must enable #define MWI_SDCARD, please verify your config.h"
-#endif
-#if (defined (MWI_SDCARD))&& !(defined(LOG_PERMANENT))
-#error "if you wants to use SDCARD support, you must enable #define LOG_PERMANENT, please verify your config.h"
-#endif
-
 #ifdef LOG_PERMANENT 
 #ifndef LOG_PERMANENT_SD_ONLY
 void readPLog(void) {
