@@ -12,8 +12,6 @@ extern int32_t wrap_18000(int32_t ang);
 
 void GPS_set_pids(void);
 void GPS_SerialInit(void);
-
-
 void GPS_NewData(void);
 void GPS_reset_home_position(void);
 void GPS_set_next_wp(int32_t* lat_to, int32_t* lon_to, int32_t* lat_from, int32_t* lon_from);
