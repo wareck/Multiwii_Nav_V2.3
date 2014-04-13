@@ -84,7 +84,11 @@ void alarmHandler(void){
     else if (!f.GPS_FIX)alarmArray[2] = 1;
     else alarmArray[2] = 0;
   #endif
-  
+
+/* 
+Alarm Conditions for bad config.h configuration
+*/  
+
 #if (defined (LOG_PERMANENT_SD_ONLY))|(defined (LOG_GPS_POSITION)) && !(defined(MWI_SDCARD))
 #error "if you had enabled options in SDCARD support you must enable #define MWI_SDCARD, please verify your config.h"
 #endif
