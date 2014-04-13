@@ -537,11 +537,13 @@
   #define LEDPIN_TOGGLE              PINB  |= (1<<7); PINC  |= (1<<7);
   #define LEDPIN_ON                  PORTB |= (1<<7); PORTC |= (1<<7);
   #define LEDPIN_OFF                 PORTB &= ~(1<<7);PORTC &= ~(1<<7);
-  #define BUZZERPIN_PINMODE          pinMode (32, OUTPUT);
+ 
   #if defined PILOTLAMP
+	#define BUZZERPIN_PINMODE          pinMode (32, OUTPUT);
     #define    PL_PIN_ON    PORTC |= 1<<5;
     #define    PL_PIN_OFF   PORTC &= ~(1<<5);
   #else
+	#define BUZZERPIN_PINMODE          pinMode (32, OUTPUT);
     #define BUZZERPIN_ON               PORTC |= 1<<5;
     #define BUZZERPIN_OFF              PORTC &= ~(1<<5);
   #endif 
