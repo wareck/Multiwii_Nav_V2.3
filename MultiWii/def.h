@@ -1201,7 +1201,6 @@
 #define STABLEPIN_PINMODE          pinMode (30, OUTPUT);
 #define STABLEPIN_ON               PORTC |= 1<<7;
 #define STABLEPIN_OFF              PORTC &= ~(1<<7);
-#define BUZZERPIN_PINMODE          pinMode (11, OUTPUT);
 #if defined MWI_SDCARD
 #define DDR_XCK2    DDRH 
 #define PORT_XCK2   PORTH  
@@ -1209,9 +1208,11 @@
 #define CSPIN XCK2
 #endif
 #if defined PILOTLAMP
+#define BUZZERPIN_PINMODE          pinMode (11, OUTPUT);
 #define    PL_PIN_ON    PORTB |= 1<<5;
 #define    PL_PIN_OFF   PORTB &= ~(1<<5);
 #else
+#define BUZZERPIN_PINMODE          pinMode (11, OUTPUT);
 #define BUZZERPIN_ON               PORTB |= 1<<5;
 #define BUZZERPIN_OFF              PORTB &= ~(1<<5);
 #endif 
