@@ -41,4 +41,5 @@
 -SBUS OrangeRX mod
 -PCF8591 I2C ADC
 -add build error if SDCARD options aren't well tuned
+-Sbus Corrective patch
 */
