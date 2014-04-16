@@ -537,17 +537,15 @@
   #define LEDPIN_TOGGLE              PINB  |= (1<<7); PINC  |= (1<<7);
   #define LEDPIN_ON                  PORTB |= (1<<7); PORTC |= (1<<7);
   #define LEDPIN_OFF                 PORTB &= ~(1<<7);PORTC &= ~(1<<7);
- 
   #if defined PILOTLAMP
-	#define BUZZERPIN_PINMODE          pinMode (32, OUTPUT);
+    #define BUZZERPIN_PINMODE          pinMode (32, OUTPUT);
     #define    PL_PIN_ON    PORTC |= 1<<5;
     #define    PL_PIN_OFF   PORTC &= ~(1<<5);
   #else
-	#define BUZZERPIN_PINMODE          pinMode (32, OUTPUT);
+    #define BUZZERPIN_PINMODE          pinMode (32, OUTPUT);
     #define BUZZERPIN_ON               PORTC |= 1<<5;
     #define BUZZERPIN_OFF              PORTC &= ~(1<<5);
   #endif 
-    
   #if !defined(DISABLE_POWER_PIN)
     #define POWERPIN_PINMODE           pinMode (37, OUTPUT);
     #define POWERPIN_ON                PORTC |= 1<<0;
@@ -592,7 +590,6 @@
   #define PCIR_PORT_BIT              (1<<2)
   #define RX_PC_INTERRUPT            PCINT2_vect
   #define RX_PCINT_PIN_PORT          PINK
-  
   #define SERVO_1_PINMODE            pinMode(34,OUTPUT);pinMode(44,OUTPUT); // TILT_PITCH - WING left
   #define SERVO_1_PIN_HIGH           PORTC |= 1<<3;PORTL |= 1<<5;
   #define SERVO_1_PIN_LOW            PORTC &= ~(1<<3);PORTL &= ~(1<<5);

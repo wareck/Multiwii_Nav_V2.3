@@ -86,7 +86,7 @@ void alarmHandler(void){
   #endif
 
 /* 
-Alarm Conditions for bad config.h configuration
+Control Config.h configuration and valid choices
 */  
 
 #if (defined (LOG_PERMANENT_SD_ONLY))|(defined (LOG_GPS_POSITION)) && !(defined(MWI_SDCARD))
