@@ -592,7 +592,7 @@
     //#define VOLUME_HEIGTH_MAX 50
     //#define VOLUME_DISTANCE_MAX 100
   
- /* The following defines are related to several types of bureaucratic authorizations from French air administration. */
+ /* The following defines are related to flying authorizations from to French air administration. */
     //#define VOLUME_S1 
     //#define VOLUME_S2
     //#define VOLUME_S3
