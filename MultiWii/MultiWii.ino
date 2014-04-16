@@ -42,4 +42,5 @@
 -PCF8591 I2C ADC
 -add build error if SDCARD options aren't well tuned
 -Sbus Corrective patch
+-Diassociate Pilot_Lamp and buzzer (better for mega2560)
 */
