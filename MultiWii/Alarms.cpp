@@ -114,7 +114,7 @@ Control Config.h configuration and valid choices
 #error "Please check config.h and #define BUZZER"
 #endif
 
-#if defined(VOLUME_FLIGHT)||defined(VOLUME_S1)||defined(VOLUME_S2)||defined(VOLUME_S3) && !(defined(GPS) 
+#if !GPS && (defined(VOLUME_FLIGHT)||defined(VOLUME_S1)||defined(VOLUME_S2)||defined(VOLUME_S3)) 
 #error "If you wants to use VOLUME_FLIGHT, you need a GPS !"
 #error "Si vous voulez utiliser la restriction de vol VOLUME_FLIGHT, vous devez avoir un GPS"
 #error "Please check config.h and GPS configuration"

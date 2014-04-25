@@ -35,21 +35,21 @@
 
 /*
 ----------------------------------------------------------------
-Modification apportées par Olivier FERNANDEZ wareck@cegetel.net:
+Modification apportÃ©es par Olivier FERNANDEZ wareck@cegetel.net:
 ----------------------------------------------------------------
-Code basé sur Multiwii 2.3 Nav b7 (eosbandi)
--intégration des cartes DroflyV2 et DroflyV3
--Intégration du support SDCARD et correction de quelques bugs liés au datalogger
+Code basï¿½ sur Multiwii 2.3 Nav b7 (eosbandi)
+-intï¿½gration des cartes DroflyV2 et DroflyV3
+-Intï¿½gration du support SDCARD et correction de quelques bugs liï¿½s au datalogger
 -Correction d'un bug du variometre
--Correction d'un bug lié au failsafe
+-Correction d'un bug liï¿½ au failsafe
 -Ajout du code de restriction de vol "Wadudu"
 -Ajout du support des cartes PCF8591 I2C ADC
--Ajout d'une boucle de controle sur la validité des options SDCARD dans config.h
+-Ajout d'une boucle de controle sur la validitÃ© des options SDCARD dans config.h
 -Patch correctif pour le SBUS (permet l'utilisation de recepteur orangeRX/futaba SBUS, inverseur necessaire http://www.fernitronix.fr/fr/multi-copters/les-gadgets-multiwii/les-recepteurs-sbus-et-multiwii-2-3 )
--Correction des calculs pour le baromètre
+-Correction des calculs pour le baromï¿½tre
 -Ajout d'option permettant au code de fonctionner sans GPS
 -Utilisation possible d'inter 6 poisitions pour les voies AUX
--Traduction en français des messages d'aletre lors de la compilation
+-Traduction en franï¿½ais des messages d'aletre lors de la compilation
 
 Code based on Multiwii 2.3 Nav b7 (eosbandi)
 -DroflyV2 and DroflyV3 boards integration
