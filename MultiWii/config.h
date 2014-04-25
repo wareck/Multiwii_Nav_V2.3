@@ -242,6 +242,12 @@
      * http://www.multiwii.com/wiki/index.php?title=Config.h#Servos_configuration
      */
 
+  /* Do not move servos if copter is unarmed
+  * It is a quick hack to overcome feedback tail wigglight when copter has a flexibile
+  * landing gear
+  */
+  #define DISABLE_SERVOS_WHEN_UNARMED
+
 
     /* if you want to preset min/middle/max values for servos right after flashing, because of limited physical
      * room for servo travel, then you must enable and set all three following options */
@@ -325,6 +331,23 @@
 /*************************************************************************************************/
 
   /* note: no need to uncomment something in this section if you use a standard receiver */
+
+  /****************************    EXTENDED AUX STATES    ***********************************/
+  /* If you uncomment this line, you can use six states for each of the aux channels (AUX1-AUX4)
+  to control your copter.
+  Channel values
+  1000-1230
+  1231-1360
+  1361-1490
+  1491-1620
+  1621-1749
+  1750-
+
+  At this moment you can use this function only with WinGUI 2.3 release. MultiWiiConf does not support it yet
+  */
+
+  //#define EXTENDED_AUX_STATES
+
 
   /**************************************************************************************/
   /********                       special receiver types             ********************/
@@ -468,7 +491,7 @@
     #define SERIAL0_COM_SPEED 115200
     #define SERIAL1_COM_SPEED 115200
     #define SERIAL2_COM_SPEED 115200
-    #define SERIAL3_COM_SPEED 57600
+    #define SERIAL3_COM_SPEED 115200
 
     /* interleaving delay in micro seconds between 2 readings WMP/NK in a WMP+NK config
        if the ACC calibration time is very long (20 or 30s), try to increase this delay up to 4000
@@ -586,9 +609,11 @@
  /******** Volume flight settings ********************/
  /* Volume flight can be used for limiting a flight in defined cylinder volume around the taking of landing.
   Initially, this code was required for French multiwii user that must be compliant to French air rules.
-  The volume is limited with a defined heigth from the ground and a distance from the taking off point */
+  The volume is limited with a defined heigth from the ground and a distance from the taking off point.
+  This option need GPS and Buzzer installed on board!
+  */
     //#define VOLUME_FLIGHT
-    //#define VOLUME_FLIGHT_RTH //pas encore mis en place
+    //#define VOLUME_FLIGHT_RTH //not yet implemented
     //#define VOLUME_HEIGTH_MAX 50
     //#define VOLUME_DISTANCE_MAX 100
   
@@ -662,7 +687,7 @@
     //#define GPS_PROMINI_SERIAL   // Will Autosense if GPS is connected when ardu boots.
 
     // avoid using 115200 baud because with 16MHz arduino the 115200 baudrate have more than 2% speed error (57600 have 0.8% error)
-    #define GPS_BAUD   115200
+  #define GPS_BAUD   57600
 
    /* GPS protocol 
        NMEA  - Standard NMEA protocol GGA, GSA and RMC  sentences are needed

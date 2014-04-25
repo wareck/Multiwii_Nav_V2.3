@@ -590,6 +590,7 @@
   #define PCIR_PORT_BIT              (1<<2)
   #define RX_PC_INTERRUPT            PCINT2_vect
   #define RX_PCINT_PIN_PORT          PINK
+  
   #define SERVO_1_PINMODE            pinMode(34,OUTPUT);pinMode(44,OUTPUT); // TILT_PITCH - WING left
   #define SERVO_1_PIN_HIGH           PORTC |= 1<<3;PORTL |= 1<<5;
   #define SERVO_1_PIN_LOW            PORTC &= ~(1<<3);PORTL &= ~(1<<5);
@@ -1653,7 +1654,6 @@
   #undef INTERNAL_I2C_PULLUPS
 #endif
 
-
 /**************************************************************************************/
 /***************              Sensor Type definitions              ********************/
 /**************************************************************************************/
@@ -1704,6 +1704,13 @@
 #else
   #define SONAR 0
 #endif
+
+#if defined(EXTENDED_AUX_STATES)
+  #define EXTAUX 1
+#else
+  #define EXTAUX 0
+#endif
+
 
 
 /**************************************************************************************/

@@ -43,4 +43,5 @@
 -add build error if SDCARD options aren't well tuned
 -Sbus Corrective patch
 -Diassociate Pilot_Lamp and Buzzer (better for mega2560)
+-Merge to Navi_b7 (gps)
 */
