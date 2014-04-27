@@ -1661,7 +1661,7 @@ uint16_t i2c_try_readReg(uint8_t add, uint8_t reg) {
 // read a 16bit unsigned int from the i2c bus
 uint16_t i2c_readReg16(int8_t addr, int8_t reg) {
   uint8_t b[2];
-  i2c_read_reg_to_buf(addr, reg, &b, sizeof(b));
+  i2c_read_reg_to_buf(addr, reg, &b[0], sizeof(b));
   return (b[0]<<8) | b[1];
 }
 
