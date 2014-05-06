@@ -21,13 +21,13 @@ _**features added by Wareck (wareck@gmail.com):**_
 _**Améliorations apportées par Wareck (wareck@gmail.com):**_
 - intégration des cartes DroflyV2 et DroflyV3
 - Intégration du support SDCARD et correction de quelques bugs li�s au datalogger
-- Correction d'un bug du variometre
+- Correction d'un bug du variomètre
 - Correction d'un bug lié au failsafe
 - Ajout du code de restriction de vol "Wadudu"
 - Ajout du support des cartes PCF8591 I2C ADC
-- Ajout d'une boucle de controle sur la validité des options SDCARD dans config.h
-- Patch correctif pour le SBUS (permet l'utilisation de recepteur orangeRX/futaba SBUS, inverseur necessaire http://www.fernitronix.fr/fr/multi-copters/les-gadgets-multiwii/les-recepteurs-sbus-et-multiwii-2-3 )
+- Ajout d'une boucle de contrôle sur la validité des options SDCARD dans config.h
+- Patch correctif pour le SBUS (permet l'utilisation de récepteur orangeRX/futaba SBUS, inverseur nécessaire http://www.fernitronix.fr/fr/multi-copters/les-gadgets-multiwii/les-recepteurs-sbus-et-multiwii-2-3 )
 - Correction des calculs pour le baromètre
 - Ajout d'option permettant au code de fonctionner sans GPS
-- Utilisation possible d'inter 6 poisitions pour les voies AUX
-- Traduction en français des messages d'aletre lors de la compilation
+- Utilisation possible d'inter 6 positions pour les voies AUX
+- Traduction en français des messages d'alerte lors de la compilation
