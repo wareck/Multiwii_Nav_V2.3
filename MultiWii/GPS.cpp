@@ -9,8 +9,6 @@
 #include "EEPROM.h"
 #include <math.h>
 
-
-
 #if GPS
 
 bool GPS_newFrame(char c);

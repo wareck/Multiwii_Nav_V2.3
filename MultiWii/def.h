@@ -842,6 +842,11 @@
   #define HW_PWM_SERVOS
 #endif
 
+#if defined(MWI_SDCARD)
+#define LOGFILE_GPS 0
+#define LOGFILE_PERM 1
+#endif
+
 
 /**************************************************************************************/
 /***************      IMU Orientations and Sensor definitions      ********************/
@@ -1199,12 +1204,6 @@
 #define STABLEPIN_PINMODE          pinMode (30, OUTPUT);
 #define STABLEPIN_ON               PORTC |= 1<<7;
 #define STABLEPIN_OFF              PORTC &= ~(1<<7);
-#if defined MWI_SDCARD
-#define DDR_XCK2    DDRH 
-#define PORT_XCK2   PORTH  
-#define XCK2        PH2   
-#define CSPIN XCK2
-#endif
 #if defined PILOTLAMP
 #define BUZZERPIN_PINMODE          pinMode (11, OUTPUT);
 #define    PL_PIN_ON    PORTB |= 1<<5;

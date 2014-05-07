@@ -1125,7 +1125,7 @@
     //#define MWI_SDCARD	          // activation of sdcard functionnality, needed for other defines underneath
     //#define LOG_PERMANENT_SD_ONLY     // Disable permanent logging on eeprom
     //#define LOG_GPS_POSITION 2	   // Write GPS position to log. Parameter is the number of seconds between two logs
-    //#define CSPIN 45                  // By default : 53 on mega boards, 10 on others. refer to your board specs
+    //#define CSPIN 53                  // By default : 53 on mega boards, 10 on others. refer to your board specs
 
     /* to add debugging code
        not needed and not recommended for normal operation
