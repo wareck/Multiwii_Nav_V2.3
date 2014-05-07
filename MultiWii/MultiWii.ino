@@ -13,40 +13,22 @@
  */
 
 #ifdef MWI_SDCARD
-#include <ArduinoStream.h>
-#include <bufstream.h>
-#include <ios.h>
-#include <iostream.h>
-#include <istream.h>
-#include <MinimumSerial.h>
-#include <ostream.h>
-#include <Sd2Card.h>
-#include <SdBaseFile.h>
 #include <SdFat.h>
-#include <SdFatConfig.h>
-#include <SdFatmainpage.h>
-#include <SdFatStructs.h>
-#include <SdFatUtil.h>
-#include <SdFile.h>
-#include <SdInfo.h>
-#include <SdStream.h>
-#include <SdVolume.h>
 #endif
-
 /*
 ----------------------------------------------------------------
 Modification apportées par Olivier FERNANDEZ wareck@cegetel.net:
 ----------------------------------------------------------------
-Code bas� sur Multiwii 2.3 Nav b7 (eosbandi)
--int�gration des cartes DroflyV2 et DroflyV3
--Int�gration du support SDCARD et correction de quelques bugs li�s au datalogger
+Code basé sur Multiwii 2.3 Nav b7 (eosbandi)
+-intégration des cartes DroflyV2 et DroflyV3
+-Intégration du support SDCARD et correction de quelques bugs li�s au datalogger
 -Correction d'un bug du variometre
 -Correction d'un bug li� au failsafe
 -Ajout du code de restriction de vol "Wadudu"
 -Ajout du support des cartes PCF8591 I2C ADC
 -Ajout d'une boucle de controle sur la validité des options SDCARD dans config.h
 -Patch correctif pour le SBUS (permet l'utilisation de recepteur orangeRX/futaba SBUS, inverseur necessaire http://www.fernitronix.fr/fr/multi-copters/les-gadgets-multiwii/les-recepteurs-sbus-et-multiwii-2-3 )
--Correction des calculs pour le barom�tre
+-Correction des calculs pour le baromètre
 -Ajout d'option permettant au code de fonctionner sans GPS
 -Utilisation possible d'inter 6 poisitions pour les voies AUX
 -Traduction en fran�ais des messages d'aletre lors de la compilation
