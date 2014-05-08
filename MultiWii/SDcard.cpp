@@ -8,7 +8,7 @@
 #include "Alarms.h"
 #include "GPS.h"
 
-
+/* thanks to Rcnet team for there job !*/
 
 #ifdef MWI_SDCARD
 #include <SdFile.h>

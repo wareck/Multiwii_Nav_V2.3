@@ -10,16 +10,25 @@
  *
  * Have fun, and do not forget MultiWii is made possible and brought to you under the GPL License.
  *
+ * Version 1.3b, Code based on Multiwii 2.3 and Nav b7 from eosbandi
  */
+
+
+
+/*=================================================================================
+ Don't forget to copy "SDfat" folder intor your arduino/libraries directory !
+ N'oubliez pas de copier le dossier "Sdfat" dans votre dossier arduino/librairies! 
+ ==================================================================================*/ 
 
 #ifdef MWI_SDCARD
 #include <SdFat.h>
 #endif
+
 /*
 ----------------------------------------------------------------
 Modification apportées par Olivier FERNANDEZ wareck@cegetel.net:
 ----------------------------------------------------------------
-Code based on Multiwii 2.3 Nav b7 (eosbandi)
+
 -DroflyV2 and DroflyV3 boards integration
 -code integration for SDCARD and corrective patch for datalogger
 -corrective patch for variometer error
@@ -33,10 +42,8 @@ Code based on Multiwii 2.3 Nav b7 (eosbandi)
 -Allow 6 position switch for AUX
 -French conversion for some compilation error code
 
-
-Code basé sur Multiwii 2.3 Nav b7 (eosbandi)
 -intégration des cartes DroflyV2 et DroflyV3
--Intégration du support SDCARD et correction de quelques bugs li�s au datalogger
+-Intégration du support SDCARD et correction de quelques bugs liés au datalogger
 -Correction d'un bug du variometre
 -Correction d'un bug lié au failsafe
 -Ajout du code de restriction de vol "Wadudu"
@@ -47,7 +54,4 @@ Code basé sur Multiwii 2.3 Nav b7 (eosbandi)
 -Ajout d'option permettant au code de fonctionner sans GPS
 -Utilisation possible d'inter 6 poisitions pour les voies AUX
 -Traduction en français des messages d'aletre lors de la compilation
-
-
-
 */

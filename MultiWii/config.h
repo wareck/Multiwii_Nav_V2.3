@@ -36,7 +36,7 @@
     //#define BI
     //#define TRI
     //#define QUADP
-      #define QUADX
+    //#define QUADX
     //#define Y4
     //#define Y6
     //#define HEX6
@@ -72,8 +72,8 @@
     #define MINCOMMAND  950
 
   /**********************************    I2C speed   ************************************/
-    //#define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
-    #define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
+    #define I2C_SPEED 100000L     //100kHz normal mode, this value must be used for a genuine WMP
+  //#define I2C_SPEED 400000L   //400kHz fast mode, it works only with some WMP clones
 
   /***************************    Internal i2c Pullups   ********************************/
     /* enable internal I2C pull ups (in most cases it is better to use external pullups) */
@@ -527,7 +527,7 @@
          IMPORTANT! Change low pass filter setting changes PID behaviour, so retune your PID's after changing LPF.*/
       //#define MPU6050_LPF_256HZ     // This is the default setting, no need to uncomment, just for reference
       //#define MPU6050_LPF_188HZ
-      //#define MPU6050_LPF_98HZ
+        #define MPU6050_LPF_98HZ
       //#define MPU6050_LPF_42HZ
       //#define MPU6050_LPF_20HZ
       //#define MPU6050_LPF_10HZ
@@ -737,7 +737,7 @@
        Convert the degree+minutes into decimal degree by ==> degree+minutes*(1/60)
        Note the sign on declination it could be negative or positive (WEST or EAST) 
 	   Also note, that maqgnetic declination changes with time, so recheck your value every 3-6 months */
-    #define MAG_DECLINATION  0.42f   //(**)
+    #define MAG_DECLINATION  0.66f   //(**)
     
     // Adds a forward predictive filterig to compensate gps lag. Code based on Jason Short's lead filter implementation
     #define GPS_LEAD_FILTER               //(**)       
