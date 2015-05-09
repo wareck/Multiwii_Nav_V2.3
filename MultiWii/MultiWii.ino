@@ -41,6 +41,7 @@ Modification apportées par Olivier FERNANDEZ wareck@cegetel.net:
 -Allow code works without GPS
 -Allow 6 position switch for AUX
 -French conversion for some compilation error code
+-Add restriction volume Fly RTH function (thanks to the wadudu Team !)
 
 -intégration des cartes DroflyV2 et DroflyV3
 -Intégration du support SDCARD et correction de quelques bugs liés au datalogger
@@ -54,4 +55,7 @@ Modification apportées par Olivier FERNANDEZ wareck@cegetel.net:
 -Ajout d'option permettant au code de fonctionner sans GPS
 -Utilisation possible d'inter 6 poisitions pour les voies AUX
 -Traduction en français des messages d'aletre lors de la compilation
+-Ajout de la fonction RTH en cas de depassement de la zone de vol (merci la team ! )
 */
+					 
+
