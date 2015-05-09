@@ -17,6 +17,7 @@ _**features added by Wareck (wareck@gmail.com):**_
 - Allow code works without GPS
 - Allow 6 position switch for AUX
 - French conversion for some compilation error code
+-Add restriction volume Fly RTH function (thanks to the wadudu Team !)
 
 _**Améliorations apportées par Wareck (wareck@gmail.com):**_
 - intégration des cartes DroflyV2 et DroflyV3
@@ -31,3 +32,4 @@ _**Améliorations apportées par Wareck (wareck@gmail.com):**_
 - Ajout d'option permettant au code de fonctionner sans GPS
 - Utilisation possible d'inter 6 positions pour les voies AUX
 - Traduction en français des messages d'alerte lors de la compilation
+- Ajout de la fonction RTH en cas de depassement de la zone de vol (merci la team ! )
