@@ -1187,6 +1187,7 @@
 #endif
 
 #if defined(DROTEK_DROFLY_V3)||defined (DROTEK_DROFLY_V3_GPS) 
+#define CSPIN 53 
 #define MPU6050
 #define MS561101BA
 #define ACC_ORIENTATION(X, Y, Z)  {imu.accADC[ROLL]  =  Y; imu.accADC[PITCH]  = -X; imu.accADC[YAW]  = Z;}

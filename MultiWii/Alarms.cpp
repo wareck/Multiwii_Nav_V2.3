@@ -101,6 +101,12 @@ Control Config.h configuration and valid choices
 #error "please check config.h"
 #endif
 
+#if (defined (MWI_SDCARD))&& !(defined(CSPIN))
+#error "If you wants to use SDCARD support, you must enable #define CSPIN 53"
+#error "Si vous voulez utiliser le support SDCARD, vous devez activer #define CSPIN 53"
+#error "please check config.h"
+#endif
+
 #if (defined (MWI_SDCARD))&& !(defined(LOG_PERMANENT))
 #error "If you wants to use SDCARD support, you must enable #define LOG_PERMANENT"
 #error "Si vous voulez utiliser le support SDCARD, vous devez activer #define LOG_PERMANENT"

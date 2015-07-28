@@ -10,7 +10,7 @@
  *
  * Have fun, and do not forget MultiWii is made possible and brought to you under the GPL License.
  *
- * Version 1.3b, Code based on Multiwii 2.3 and Nav b7 from eosbandi
+ * Version 1.4, Code based on Multiwii 2.3 and Nav b7 from eosbandi
  */
 
 
