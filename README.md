@@ -1,5 +1,5 @@
 ## Mutliwii 2.3 + GPS NAV 
-### Drotek V3 support (V7)
+### Drotek V3 support (Multiwii 2.3 + Nav v7)
 ### Code based on Multiwii 2.3 Nav b7 (eosbandi)
 ===============================
 
