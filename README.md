@@ -22,7 +22,7 @@ _**features added by Wareck (wareck@gmail.com):**_
 
 _**Améliorations apportées par Wareck (wareck@gmail.com):**_
 - intégration des cartes DroflyV2 et DroflyV3
-- Intégration du support SDCARD et correction de quelques bugs li�s au datalogger
+- Intégration du support SDCARD et correction de quelques bugs du datalogger
 - Correction d'un bug du variomètre
 - Correction d'un bug lié au failsafe
 - Ajout du code de restriction de vol "Wadudu"
