@@ -33,4 +33,4 @@ _**Améliorations apportées par Wareck (wareck@gmail.com):**_
 - Ajout d'option permettant au code de fonctionner sans GPS
 - Utilisation possible d'inter 6 positions pour les voies AUX
 - Traduction en français des messages d'alerte lors de la compilation
-- Ajout de la fonction RTH en cas de depassement de la zone de vol (merci la team ! )
+- Ajout de la fonction RTH en cas de depassement de la zone de vol (merci la team wadudu! )
