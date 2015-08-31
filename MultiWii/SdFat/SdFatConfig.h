@@ -37,9 +37,7 @@
 #endif  // __arm__
 //------------------------------------------------------------------------------
 /**
- * Set USE_MULTI_BLOCK_SD_IO nonzero to use multi-block SD read/write.
- *
- * Don't use mult-block read/write on small AVR boards.
+ * Don't use mult-block read/write on small AVR boards
  */
 #if defined(RAMEND) && RAMEND < 3000
 #define USE_MULTI_BLOCK_SD_IO 0
@@ -48,10 +46,28 @@
 #endif
 //------------------------------------------------------------------------------
 /**
- * Force use of Arduino Standard SPI library if USE_ARDUINO_SPI_LIBRARY
+ *  Force use of Arduino Standard SPI library if USE_ARDUINO_SPI_LIBRARY
  * is nonzero.
  */
 #define USE_ARDUINO_SPI_LIBRARY 0
+//------------------------------------------------------------------------------
+/**
+ * Use native SPI on Teensy 3.0 if USE_NATIVE_MK20DX128-SPI is nonzero.
+ */
+#if defined(__arm__) && defined(CORE_TEENSY)
+#define USE_NATIVE_MK20DX128_SPI 1
+#else
+#define USE_NATIVE_MK20DX128_SPI 0
+#endif
+//------------------------------------------------------------------------------
+/**
+ * Use fast SAM3X SPI library if USE_NATIVE_SAM3X_SPI is nonzero.
+ */
+#if defined(__arm__) && !defined(CORE_TEENSY)
+#define USE_NATIVE_SAM3X_SPI 1
+#else
+#define USE_NATIVE_SAM3X_SPI 0
+#endif
 //------------------------------------------------------------------------------
 /**
  * To enable SD card CRC checking set USE_SD_CRC nonzero.
@@ -65,7 +81,7 @@
 /**
  * To use multiple SD cards set USE_MULTIPLE_CARDS nonzero.
  *
- * Using multiple cards costs about 200  bytes of flash.
+ * Using multiple cards costs 400 - 500  bytes of flash.
  *
  * Each card requires about 550 bytes of SRAM so use of a Mega is recommended.
  */
@@ -81,8 +97,8 @@
 /**
  * For AVR
  *
- * Set USE_SERIAL_FOR_STD_OUT nonzero to use Serial (the HardwareSerial class)
- * for error messages and output from print functions like ls().
+ * Set nonzero to use Serial (the HardwareSerial class) for error messages
+ * and output from print functions like ls().
  *
  * If USE_SERIAL_FOR_STD_OUT is zero, a small non-interrupt driven class
  * is used to output messages to serial port zero.  This allows an alternate
@@ -113,28 +129,30 @@
 #define ENDL_CALLS_FLUSH 0
 //------------------------------------------------------------------------------
 /**
+ * Allow use of deprecated functions if ALLOW_DEPRECATED_FUNCTIONS is nonzero
+ */
+#define ALLOW_DEPRECATED_FUNCTIONS 0
+//------------------------------------------------------------------------------
+/**
  * Allow FAT12 volumes if FAT12_SUPPORT is nonzero.
  * FAT12 has not been well tested.
  */
 #define FAT12_SUPPORT 0
 //------------------------------------------------------------------------------
 /**
- * SPI SCK divisor for SD initialization commands.
+ * SPI init rate for SD initialization commands. Must be 10 (F_CPU/64)
  * or greater
  */
-#ifdef __AVR__
-const uint8_t SPI_SCK_INIT_DIVISOR = 64;
-#else
-const uint8_t SPI_SCK_INIT_DIVISOR = 128;
-#endif
+#define SPI_SD_INIT_RATE 11
 //------------------------------------------------------------------------------
 /**
  * Define MEGA_SOFT_SPI nonzero to use software SPI on Mega Arduinos.
  * Default pins used are SS 10, MOSI 11, MISO 12, and SCK 13.
  * Edit Software Spi pins to change pin numbers.
  *
- * MEGA_SOFT_SPI allows an unmodified 328 Shield to be used
- * on Mega Arduinos.
+ * MEGA_SOFT_SPI allows an unmodified Adafruit GPS Shield to be used
+ * on Mega Arduinos.  Software SPI works well with GPS Shield V1.1
+ * but many SD cards will fail with GPS Shield V1.0.
  */
 #define MEGA_SOFT_SPI 0
 //------------------------------------------------------------------------------
@@ -143,8 +161,9 @@ const uint8_t SPI_SCK_INIT_DIVISOR = 128;
  * Default pins used are SS 10, MOSI 11, MISO 12, and SCK 13.
  * Edit Software Spi pins to change pin numbers.
  *
- * LEONARDO_SOFT_SPI allows an unmodified 328 Shield to be used
- * on Leonardo Arduinos.
+ * LEONARDO_SOFT_SPI allows an unmodified Adafruit GPS Shield to be used
+ * on Leonardo Arduinos.  Software SPI works well with GPS Shield V1.1
+ * but many SD cards will fail with GPS Shield V1.0.
  */
 #define LEONARDO_SOFT_SPI 0
 //------------------------------------------------------------------------------

@@ -25,7 +25,7 @@
  */
 class MinimumSerial : public Print {
  public:
-  void begin(uint32_t baud);
+  void begin(unsigned long);
   int read();
   size_t write(uint8_t b);
   using Print::write;
