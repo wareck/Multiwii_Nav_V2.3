@@ -10,7 +10,7 @@
  *
  * Have fun, and do not forget MultiWii is made possible and brought to you under the GPL License.
  *
- * Version 1.4, Code based on Multiwii 2.3 and Nav b7 from eosbandi
+ * Version 1.41, Code based on Multiwii 2.3 and Nav b7 from eosbandi
  */
 
 
@@ -41,7 +41,9 @@ Modification apportées par Olivier FERNANDEZ wareck@cegetel.net:
 -Allow code works without GPS
 -Allow 6 position switch for AUX
 -French conversion for some compilation error code
--Add restriction volume Fly RTH function (thanks to the wadudu Team !)
+-Add restriction volume Fly RTH function (thanks to the Wadudu Team !)
+-Function Autoland on bad battery added
+
 
 -intégration des cartes DroflyV2 et DroflyV3
 -Intégration du support SDCARD et correction de quelques bugs liés au datalogger
@@ -55,7 +57,8 @@ Modification apportées par Olivier FERNANDEZ wareck@cegetel.net:
 -Ajout d'option permettant au code de fonctionner sans GPS
 -Utilisation possible d'inter 6 poisitions pour les voies AUX
 -Traduction en français des messages d'aletre lors de la compilation
--Ajout de la fonction RTH en cas de depassement de la zone de vol (merci la team wadudu! )
+-Ajout de la fonction RTH en cas de depassement de la zone de vol (merci la team Wadudu! )
+-Fonction Autoland si la batterie est vide ajoutée
 */
 					 
 

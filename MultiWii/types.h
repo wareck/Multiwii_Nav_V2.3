@@ -134,6 +134,9 @@ typedef struct {
   uint8_t GPS_BARO_MODE : 1;        // This flag is used when GPS controls baro mode instead of user (it will replace rcOptions[BARO]
   uint8_t LAND_COMPLETED: 1;
   uint8_t LAND_IN_PROGRESS: 1;
+#if defined (VBAT) && defined (VBAT_ALAND)
+  uint8_t VBAT_AUTOLAND : 1;
+#endif
 #ifdef MWI_SDCARD //SDCARD
   uint8_t SDCARD : 1;
 #endif

@@ -113,6 +113,10 @@ Control Config.h configuration and valid choices
 #error "please check config.h"
 #endif
 
+#if defined (VBAT) && defined (VBAT_ALAND) && !GPS 
+#error "Unfortunatly GPS is needed for using VBAT_ALAND"
+#endif
+
 #if defined(VOLUME_FLIGHT)||defined(VOLUME_S1)||defined(VOLUME_S2)||defined(VOLUME_S3)
 #if !defined(BUZZER)
 #error "If you want to use VOLUME_FLIGHT you must use a buzzer..."

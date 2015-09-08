@@ -116,6 +116,11 @@ extern int16_t lookupThrottleRC[11];
   extern uint32_t armedTime;
 #endif
 
+#if defined (VBAT) && defined (VBAT_ALAND)
+  extern int16_t vbatland_count;
+  extern uint8_t  land_BatAlarm;
+#endif
+
 #if GPS
 // *************************************** begin GPS common variables and defines ******************************************************************
 

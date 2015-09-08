@@ -36,7 +36,7 @@
     //#define BI
     //#define TRI
     //#define QUADP
-    //#define QUADX
+      #define QUADX
     //#define Y4
     //#define Y6
     //#define HEX6
@@ -246,7 +246,7 @@
   * It is a quick hack to overcome feedback tail wigglight when copter has a flexibile
   * landing gear
   */
-  #define DISABLE_SERVOS_WHEN_UNARMED
+    #define DISABLE_SERVOS_WHEN_UNARMED
 
 
     /* if you want to preset min/middle/max values for servos right after flashing, because of limited physical
@@ -905,7 +905,8 @@
     #define VBATLEVEL_WARN2  99 // (*) (**) 9.9V
     #define VBATLEVEL_CRIT   93 // (*) (**) 9.3V - critical condition: if vbat ever goes below this value, permanent alarm is triggered
     #define NO_VBAT          16 // Avoid beeping without any battery
-
+  //#define VBAT_ALAND          // when bat reach VBATLEVEL2_WARN copter, autolanding
+  //#define VBAT_ALAND_CNT    3 // Number of Bat Warning level 2 heared before activate autoland
 
   /********************************************************************/
   /****           powermeter (battery capacity monitoring)         ****/
